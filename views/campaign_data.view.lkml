@@ -80,6 +80,13 @@ view: campaign_data {
     datatype: date
     sql: ${TABLE}.Start_Date ;;
   }
+
+  dimension: ROI {
+    type: number
+    sql: (${revenue_generated} - ${cost}) / NULLIF(${cost}, 0) ;;
+    value_format: "0.00%"
+  }
+
   measure: count {
     type: count
     drill_fields: [campaign_name]
