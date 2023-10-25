@@ -28,6 +28,7 @@ view: customer_data {
     sql: ${age} ;;  }
 
   dimension: customer_id {
+    primary_key: yes
     type: string
     sql: ${TABLE}.Customer_ID ;;
   }

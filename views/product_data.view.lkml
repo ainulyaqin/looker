@@ -33,6 +33,7 @@ view: product_data {
     sql: ${price} ;;  }
 
   dimension: product_id {
+    primary_key: yes
     type: string
     sql: ${TABLE}.Product_ID ;;
   }

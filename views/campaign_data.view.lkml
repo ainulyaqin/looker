@@ -17,8 +17,9 @@ view: campaign_data {
   }
 
   dimension: campaign_id {
+    primary_key: yes
     type: string
-    sql: ${TABLE}.Campaign_ID ;;
+    sql: ${TABLE}.Campaign_ID;;
   }
 
   dimension: campaign_name {
