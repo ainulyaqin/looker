@@ -68,6 +68,7 @@ view: campaign_data {
     sql: ${TABLE}.Impressions ;;
   }
 
+
   dimension: revenue_generated {
     type: number
     sql: ${TABLE}.Revenue_Generated ;;
@@ -110,4 +111,8 @@ view: campaign_data {
     sql: ${conversions} ;;
   }
 
+  dimension: ctr {
+    type: number
+    sql: (CAST(${clicks} AS float) / ${impressions}) * 100 ;;
+  }
 }
