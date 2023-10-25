@@ -92,6 +92,11 @@ view: campaign_data {
     type: count
     drill_fields: [campaign_name]
   }
+
+  measure: average_roi {
+    type: average
+    sql: ${ROI} ;;
+  }
   measure: total_revenue {
     type: sum
     sql: ${revenue_generated} ;;
