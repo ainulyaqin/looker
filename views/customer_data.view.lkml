@@ -1,4 +1,9 @@
 # The name of this view in Looker is "Customer Data"
+
+map_layer: identifier {
+  file: "/indonesia.geojson"
+}
+
 view: customer_data {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
@@ -57,8 +62,16 @@ view: customer_data {
     type: string
     sql: ${TABLE}.Location ;;
   }
+
+  dimension: location_geo {
+    type: string
+    map_layer_name: identifier    # this is your map layer
+    sql: upper(${TABLE}.Location);;
+  }
+
   measure: count {
     type: count
     drill_fields: [first_name, last_name]
   }
+
 }
