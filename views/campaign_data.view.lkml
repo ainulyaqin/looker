@@ -111,10 +111,9 @@ view: campaign_data {
     drill_fields: [campaign_name]
   }
 
-  measure: total_roi {
+  measure: avg_ROI {
     type: average
-    sql:(sum(${revenue_generated})-sum(${cost} )) / 100;;
-    value_format: "0.00%"
+    sql: ${ROI} ;;
   }
 
   measure: total_revenue {
