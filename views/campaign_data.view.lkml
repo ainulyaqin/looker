@@ -95,7 +95,7 @@ view: campaign_data {
 
   measure: total_roi {
     type: average
-    sql:( sum(${revenue_generated})-sum(${cost} )) / sum( NULLIF(${cost}, 0));;
+    sql:(sum(${revenue_generated})-sum(${cost} )) / 100;;
     value_format: "0.00%"
   }
 
