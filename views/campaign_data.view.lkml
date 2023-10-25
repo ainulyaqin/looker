@@ -27,6 +27,24 @@ view: campaign_data {
     sql: ${TABLE}.Campaign_Name ;;
   }
 
+  dimension: campaign_name_sorted {
+    type: number
+    sql:
+      CASE
+        WHEN ${TABLE}.Campaign_Name = 'Gebyar Promo 1' THEN 1
+        WHEN ${TABLE}.Campaign_Name = 'Gebyar Promo 2' THEN 2
+        WHEN ${TABLE}.Campaign_Name = 'Gebyar Promo 3' THEN 3
+        WHEN ${TABLE}.Campaign_Name = 'Gebyar Promo 4' THEN 4
+        WHEN ${TABLE}.Campaign_Name = 'Gebyar Promo 5' THEN 5
+        WHEN ${TABLE}.Campaign_Name = 'Gebyar Promo 6' THEN 6
+        WHEN ${TABLE}.Campaign_Name = 'Gebyar Promo 7' THEN 7
+        WHEN ${TABLE}.Campaign_Name = 'Gebyar Promo 8' THEN 8
+        WHEN ${TABLE}.Campaign_Name = 'Gebyar Promo 9' THEN 9
+        ELSE 10
+      END ;;
+    hidden: yes
+  }
+
   dimension: clicks {
     type: number
     sql: ${TABLE}.Clicks ;;
