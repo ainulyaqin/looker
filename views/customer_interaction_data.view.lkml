@@ -61,9 +61,12 @@ view: customer_interaction_data {
   measure: average_transaction_amount {
     type: average
     sql: ${transaction_amount} ;;  }
+
   measure: count {
     type: count
+    drill_fields: [customer_id, customer_demographic_data.first_name, customer_demographic_data.last_name, customer_demographic_data.age, customer_demographic_data.location, transaction_amount,  customer_demographic_data.email]
   }
+
   measure: total_conversions {
     type: sum
     sql: ${conversions} ;;  }

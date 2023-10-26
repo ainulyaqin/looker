@@ -40,6 +40,10 @@ view: customer_demographic_data {
 
   dimension: email {
     type: string
+    link: {
+      label: "Send Message"
+      url: "mailto:{{ value }}"
+    }
     sql: ${TABLE}.Email ;;
   }
 
