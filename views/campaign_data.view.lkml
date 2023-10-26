@@ -137,6 +137,7 @@ view: campaign_data {
 
   dimension: ctr {
     type: number
-    sql: (${clicks} / ${impressions}) * 100 ;;
+    sql: (${clicks} / ${impressions}) ;;
+    value_format: "0.00%"
   }
 }
