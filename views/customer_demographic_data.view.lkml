@@ -78,6 +78,6 @@ view: customer_demographic_data {
   }
   measure: count {
     type: count
-    drill_fields: [first_name, last_name]
+    drill_fields: [gender]
   }
 }
