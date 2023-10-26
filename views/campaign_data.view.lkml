@@ -137,6 +137,7 @@ view: campaign_data {
 
   dimension: ctr {
     type: number
-    sql: (CAST(${clicks} AS float) / ${impressions}) * 100 ;;
+    sql: (${clicks} / ${impressions}) ;;
+    value_format: "0.00%"
   }
 }
