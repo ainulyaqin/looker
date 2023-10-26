@@ -1,13 +1,13 @@
-# The name of this view in Looker is "Customer Data"
-
+# The name of this view in Looker is "Customer Demographic Data"
 map_layer: identifier {
   file: "/indonesia.geojson"
 }
 
-view: customer_data {
+
+view: customer_demographic_data {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `cdp-demo-395508.retail_analytic.customer_data` ;;
+  sql_table_name: `cdp-demo-395508.retail_analytic.customer_demographic_data` ;;
 
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
@@ -33,7 +33,6 @@ view: customer_data {
     sql: ${age} ;;  }
 
   dimension: customer_id {
-    primary_key: yes
     type: string
     sql: ${TABLE}.Customer_ID ;;
   }
@@ -58,6 +57,11 @@ view: customer_data {
     sql: ${TABLE}.Last_Name ;;
   }
 
+  dimension: latitude {
+    type: number
+    sql: ${TABLE}.Latitude ;;
+  }
+
   dimension: location {
     type: string
     sql: ${TABLE}.Location ;;
@@ -68,10 +72,12 @@ view: customer_data {
     map_layer_name: identifier    # this is your map layer
     sql: upper(${TABLE}.Location);;
   }
-
+  dimension: longitude {
+    type: number
+    sql: ${TABLE}.Longitude ;;
+  }
   measure: count {
     type: count
     drill_fields: [first_name, last_name]
   }
-
 }
