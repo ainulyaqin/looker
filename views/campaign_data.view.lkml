@@ -111,6 +111,12 @@ view: campaign_data {
     drill_fields: [campaign_name]
   }
 
+  measure: total_ROI {
+    type: sum
+    sql: ${ROI} ;;
+    value_format: "0.00%"
+  }
+
   measure: avg_ROI {
     type: average
     sql: ${ROI} ;;
