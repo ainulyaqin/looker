@@ -64,4 +64,11 @@ view: customer_interaction_data {
   measure: count {
     type: count
   }
+  measure: total_conversions {
+    type: sum
+    sql: ${conversions} ;;  }
+
+  measure: total_clicks {
+    type: sum
+    sql: ${clicks} ;;  }
 }
