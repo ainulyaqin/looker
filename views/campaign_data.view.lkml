@@ -125,6 +125,10 @@ view: campaign_data {
     type: sum
     sql: ${clicks} ;;
   }
+  measure: total_impression {
+    type: sum
+    sql: ${impressions} ;;
+  }
 
   measure: total_budget {
     type: sum
