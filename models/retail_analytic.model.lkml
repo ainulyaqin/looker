@@ -27,7 +27,7 @@ persist_with: retail_analytic_default_datagroup
 
 explore: campaign_data {}
 
-explore: customer_data {}
+explore: customer_demographic_data {}
 
 explore: product_data {}
 
@@ -39,10 +39,10 @@ explore: customer_interaction_data {
     sql_on: ${campaign_data.campaign_id}=${customer_interaction_data.campaign_id} ;;
   }
 
-  join: customer_data {
+  join: customer_demographic_data {
     type: full_outer
     relationship: many_to_one
-    sql_on: ${customer_data.customer_id}=${customer_interaction_data.customer_id} ;;
+    sql_on: ${customer_demographic_data.customer_id}=${customer_interaction_data.customer_id} ;;
   }
 
   join: product_data {
